@@ -35,6 +35,7 @@ import pickle # imports the pickle module
 with open(pickle_file, "wb") as file: # once this with() is complete, it automatically closes the file
     pickle.dump(book_titles, file)  # dumps the existing data into the file
 ```
+#### Figure 2 — Importing the pickle module and using with and open() to pickle the existing list from Figure 1
 The open function takes two arguments: the file name and the mode that you want the file to be stored as; I set this second argument to “wb”. In this mode, the “w” stands for ‘write’ and will write the existing list’s data to the binary file; the ‘b’ stands for binary, which will store the data in binary mode as opposed to storing it as comma-separated values, like we have been previously learning.
 
 To remind myself of how pickling works, I added comments to each section. Specifically, I added that the with statement would close the function once it finishes working with the file. This allows me to not have to add a file.close() statement after the data is dumped into the binary file.
