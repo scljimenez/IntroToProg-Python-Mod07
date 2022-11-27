@@ -96,3 +96,57 @@ Similar to **Figure 4**, I used another for-loop that would loop through the upd
 
 ![Figure 8](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/new_list.png "The new list saved to the binary file, showing four items in the updated list")
 #### Figure 8 — The binary file opened in PyCharm, showing the updated list.
+
+## 3.1 Combining Pickling and Structured Error Handling:
+On the first pass of my script, I had included a separate section for error handling and one for combining both pickling and structured error handling. I felt that the code was a bit repetitive for both these sections, so I ended up grouping both code chunks into one section.
+
+Structured Error handling involves using Try-Except blocks to catch errors and present those errors to the user in a user-friendly and readable way in case they aren’t familiar with the error names the Python virtual environment throws. The try portion of the block runs a section of code includes a possible way of the code being tested to run and work, while the except block is meant to catch either specific or general errors that the programmer wants to test and improve.
+
+In **Figure 9**, I included a while-loop and two initial values that prompted the user to input two different numbers. Once it had stored those numbers, the try loop is executed, attempting to divide value1 over value2. If that division is possible, then the quotient is stored into a new variable, new_quotient.
+
+I then crated two with-open statements similar to the ones discussed in the pickling section. For the first statement, I converted the quotient value into an integer and had it dumped into the existing binary file. I also included a print statement that told the user their data had been saved, as the .dat file would be closed as soon as the open() function ends.
+```
+# Combining Pickling and Structured Error Handling #
+
+while(True):
+    value1 = int(input("Please input a first number to be divided: "))
+    value2 = int(input("Please input a second number to be divided: "))
+    try:
+        new_quotient = value1 / value2
+        with open(pickle_file, "wb") as combined_file:
+            new_values = pickle.dump(str(new_quotient), combined_file) # convert int to string
+            print("Data saved to file.")
+
+        with open(pickle_file, "rb") as load_quotient:
+            load_result = pickle.load(load_quotient)
+            print("This is the quotient from the unpickled file: ", load_result)
+        break
+    except ZeroDivisionError:
+        print("Numbers cannot be divided by 0. Please input a different number.")
+```
+#### Figure 9 — Combined try-except and pickling code
+For the second with-open statement, I had the binary file read through ‘rb’ and the data loaded back into the console. To ensure that the data had been unpickled (accessed through the load_result) variable, I included a print statement that took in a string as well as the load_result variable and printed it back to the user.
+
+My except block used the Python exception ZeroDivisionError, which does not allow integers or floats to be divided by zero, to catch the errors. Since the except block is nested within the for-loop, once the print statement informing the user that numbers cannot be divided by zero is printed, the input prompts will run again.
+
+I ran this section of my script in PyCharm, which can be seen in **Figure 10** and **Figure 11**:
+
+![Figure 10](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/try_except_pycharm.png "Running the try-except block in PyCharm. The error message tells the user 8 isn't divisible by 0 and prompts them to input another integer. They input the numbers 4 and 2, after which the script tells them their data has been saved. The script then prints out that their quotient which has been pickled has been unpickled, showing the result is 2.0")
+#### Figure 10 — The try-except block running in PyCharm. The third line shows the print() statement that runs when a user tries to divide a number by 0. The seventh line shows the unpickled data printed out to the user.
+
+![Figure 11](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/try_except_file.png "The binary file where the quotient data is stored. The saved quotient appears visible at the end of the line, showing that the result is 2.0. The rest of the values before that one is unreadable, due to the nature of binary.")
+#### Figure 11 — The results of the try-except block: the saved quotient appears in the binary file, visible at the end of the line.
+
+## 3.3 Running the script in the Command Shell:
+I also ran my script in the command shell, which can be seen in **Figures 12** through **Figure 14**. **Figure 12** shows the full run of the script in the command shell, including where I added a new book title to the existing list, followed by testing the try-except and pickling sections.
+![Figure 12](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console.png "Running the entire script from the Mac OS Command Shell. The user inputs the book title 'Garcia Lorca: Obras Completas'. They then input the numbers 6 and 0 into the try-except block prompts; that runs an error telling the user they cannot divide by zero. The user is prompted by the script to input two new numbers; they input 6 and 2. This time, the scrpit does run and the console displays the message that their data has been unpickled, showing that the quotient is 3")
+#### Figure 12 — The script running in the Mac OS command shell
+
+![Figure 13](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console_result_1.png "A picture of the binary file opened. At the end of the line, it shows the book title the user had input 'Garcia Lorca: Obras Completas' The rest of the data before that line is obscured and unreadable.")
+#### Figure 13 — The first result of the script having been run in the command shell, showing the book title 'Garcia Lorca: Obras Completas' having been saved to the binary file.
+
+![Figure 14](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console_result_2.png "The second result of the script being run, with a value of 3.0 at the end of the line. The previous data in that line is unreadable, given the nature of binary")
+#### Figure 14 — The last result of the script running in the command shell, showing that the quotient has been saved to the binary file since its result is not 0.
+
+## 4. Summary
+This paper has described my pickling and error-handling script. It uses the pickle module from Python and the with-open() statements to dump and load data into a binary file and to present that unpickled, readable data back to the user. It also uses structured error handling to remind the user of errors and to make sure they’ve input the proper data type so that it can be properly saved to a file.
