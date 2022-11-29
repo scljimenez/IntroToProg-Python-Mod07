@@ -10,6 +10,7 @@
 This paper describes my script which addresses pickling and error-handling. Using the Separation of Concerns principles, I divided my script into one section for pickling and one for error-handling. These sections includes subsections for declaring data, processing data, and presenting or interacting with the user to obtain new data.
 
 ## 2.1 Pickling Article
+The article I used to learn about pickling comes from Snyk Blog titled “The ultimate guide to Python pickling” found at https://snyk.io/blog/guide-to-python-pickle/ [External Link]. This article was helpful because it described the data types the pickle module accepts. It also clearly described the differences between serialization and deserialization, as other articles I had looked at did not address what these actions were and how they were important and relevant to pickling. 
 
 
 ## 2.2 Declaring Variables & Pickling Data:
@@ -97,14 +98,19 @@ Similar to **Figure 4**, I used another for-loop that would loop through the upd
 ![Figure 8](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/new_list.png "The new list saved to the binary file, showing four items in the updated list")
 #### Figure 8 — The binary file opened in PyCharm, showing the updated list.
 
-## 3.1 Combining Pickling and Structured Error Handling:
+## 3.1 Structured-Error Handling Article:
+The article I chose was the “Python Exceptions” article from https://www.javatpoint.com/python-exception-handling [External Link]. I liked this article because it explained the differences between syntax errors and exceptions errors. Most of my issues while writing the previous assignments had been syntax errors and it was nice to have an explanation about how these two errors are different in Python.
+
+I also found it helpful that within a try-except block, else can be included to catch other errors or perform other functions that the try and except lines do not. It reminded me of the elif-statements that we use when writing if-statements.
+
+## 3.2 Combining Pickling and Structured Error Handling:
 On the first pass of my script, I had included a separate section for error handling and one for combining both pickling and structured error handling. I felt that the code was a bit repetitive for both these sections, so I ended up grouping both code chunks into one section.
 
 Structured Error handling involves using Try-Except blocks to catch errors and present those errors to the user in a user-friendly and readable way in case they aren’t familiar with the error names the Python virtual environment throws. The try portion of the block runs a section of code includes a possible way of the code being tested to run and work, while the except block is meant to catch either specific or general errors that the programmer wants to test and improve.
 
 In **Figure 9**, I included a while-loop and two initial values that prompted the user to input two different numbers. Once it had stored those numbers, the try loop is executed, attempting to divide value1 over value2. If that division is possible, then the quotient is stored into a new variable, new_quotient.
 
-I then crated two with-open statements similar to the ones discussed in the pickling section. For the first statement, I converted the quotient value into an integer and had it dumped into the existing binary file. I also included a print statement that told the user their data had been saved, as the .dat file would be closed as soon as the open() function ends.
+I then created two with-open statements similar to the ones discussed in the pickling section. For the first statement, I converted the quotient value into an integer and had it dumped into the existing binary file. I also included a print statement that told the user their data had been saved, as the .dat file would be closed as soon as the open() function ends.
 ```
 # Combining Pickling and Structured Error Handling #
 
