@@ -63,7 +63,7 @@ In the with-open line, I again called the .dat file, but this time set the mode 
 
 As we saw in **Figure 3**, the binary file does not present the most user-friendly or readable format for the pickled data to be understood by the user using my script. To remedy this, I used a for-loop to loop through the variable existing_data. Since existing_data has access to the binary file, it can easily loop through the data and print out each element from the original list. Before the for-loop, I included a print statement that reminded the user what this data is and where it comes from. **Figure 5** shows the results of running the code chunk from **Figure 4**: 
 
-![Figure 5 — Printing out the unpickled data from the binary file](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/unpickled_printed_data.png "The unpickled and printed out data that had been stored in the binary file")
+![Figure 5 — Printing out the unpickled data from the binary file](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/docs/images/unpickled_printed_data.png "The unpickled and printed out data that had been stored in the binary file")
 #### Figure 5 — The unpickled and printed out data that had been stored in the binary file
 
 ## 2.4 Taking in and Pickling New Data:
