@@ -45,7 +45,7 @@ Within the with open() line, I added the pickle.dump() function. According to th
 
 Running this section of the script and opening the .dat file showed that the book titles from the list had been successfully dumped into the binary file. As mentioned by Professor Root and other articles I had read on pickling, **Figure 3** shows that the book titles are still in a readable format, but that the rest of the file contains unreadable characters:
 
-![Figure 3 — The binary file](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/pickled_existing_data_to_file.png "Results of opening the binary file in PyCharm")
+![Figure 3 — The binary file](https://github.com/scljimenez/IntroToProg-Python-Mod07/pickled_existing_data_to_file.png "Results of opening the binary file in PyCharm")
 #### Figure 3 — The binary file opened in PyCharm, showing that the data is still somewhat readable to a human
 
 ## 2.3 Unpickling Existing Data:
