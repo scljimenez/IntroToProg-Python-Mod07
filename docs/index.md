@@ -45,7 +45,7 @@ Within the with open() line, I added the pickle.dump() function. According to th
 
 Running this section of the script and opening the .dat file showed that the book titles from the list had been successfully dumped into the binary file. As mentioned by Professor Root and other articles I had read on pickling, **Figure 3** shows that the book titles are still in a readable format, but that the rest of the file contains unreadable characters:
 
-![Figure 3 — The binary file](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/docs/images/pickled_existing_data_to_file.png) "Results of opening the binary file in PyCharm")
+![Figure 3 — The binary file](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/pickled_existing_data_to_file.png "Results of opening the binary file in PyCharm")
 #### Figure 3 — The binary file opened in PyCharm, showing that the data is still somewhat readable to a human
 
 ## 2.3 Unpickling Existing Data:
@@ -63,7 +63,7 @@ In the with-open line, I again called the .dat file, but this time set the mode 
 
 As we saw in **Figure 3**, the binary file does not present the most user-friendly or readable format for the pickled data to be understood by the user using my script. To remedy this, I used a for-loop to loop through the variable existing_data. Since existing_data has access to the binary file, it can easily loop through the data and print out each element from the original list. Before the for-loop, I included a print statement that reminded the user what this data is and where it comes from. **Figure 5** shows the results of running the code chunk from **Figure 4**: 
 
-![Figure 5 — Printing out the unpickled data from the binary file](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/docs/images/unpickled_printed_data.png "The unpickled and printed out data that had been stored in the binary file")
+![Figure 5 — Printing out the unpickled data from the binary file](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/unpickled_printed_data.png "The unpickled and printed out data that had been stored in the binary file")
 #### Figure 5 — The unpickled and printed out data that had been stored in the binary file
 
 ## 2.4 Taking in and Pickling New Data:
@@ -92,6 +92,7 @@ I created a new variable, new_book, which took a string input from the user and 
 I used similar code from **Figure 2** to write the updated list to the binary file. Calling on the binary file and using “wb” again to write the information to the binary file, I set the file-object as reopen_file. Since the data in book_titles had been updated through the .append() function, the data that is dumped into the binary file includes the new user data that was captured from the input prompt.
 
 Similar to **Figure 4**, I used another for-loop that would loop through the updated list and print out each book title for the user. **Figure 7** and **Figure 8** show the entire pickling section of this script being run in PyCharm:
+
 ![Figure 7](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/running_script_pycharm.png "The script running in PyCharm, showing three things: unpickled data displayed to the user, the user inputting a new book title, and the new updated list of data printed out to the user")
 #### Figure 7 — The pickling section running in PyCharm, showing the first list, the user's input, and the new list with updated data
 
@@ -146,7 +147,7 @@ I ran this section of my script in PyCharm, which can be seen in **Figure 10** a
 ## 3.3 Running the script in the Command Shell:
 
 I also ran my script in the command shell, which can be seen in **Figures 12** through **Figure 14**. **Figure 12** shows the full run of the script in the command shell, including where I added a new book title to the existing list, followed by testing the try-except and pickling sections.
-![Figure 12](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console.png "Running the entire script from the Mac OS Command Shell. The user inputs the book title 'Garcia Lorca: Obras Completas'. They then input the numbers 6 and 0 into the try-except block prompts; that runs an error telling the user they cannot divide by zero. The user is prompted by the script to input two new numbers; they input 6 and 2. This time, the scrpit does run and the console displays the message that their data has been unpickled, showing that the quotient is 3")
+![Figure 12](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console.png "Running the entire script from the Mac OS Command Shell. The user inputs the book title Garcia Lorca: Obras Completas. They then input the numbers 6 and 0 into the try-except block prompts; that runs an error telling the user they cannot divide by zero. The user is prompted by the script to input two new numbers; they input 6 and 2. This time, the scrpit does run and the console displays the message that their data has been unpickled, showing that the quotient is 3")
 #### Figure 12 — The script running in the Mac OS command shell
 
 ![Figure 13](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console_result_1.png "A picture of the binary file opened. At the end of the line, it shows the book title the user had input 'Garcia Lorca: Obras Completas' The rest of the data before that line is obscured and unreadable.")
