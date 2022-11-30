@@ -144,6 +144,7 @@ I ran this section of my script in PyCharm, which can be seen in **Figure 10** a
 #### Figure 11 — The results of the try-except block: the saved quotient appears in the binary file, visible at the end of the line.
 
 ## 3.3 Running the script in the Command Shell:
+
 I also ran my script in the command shell, which can be seen in **Figures 12** through **Figure 14**. **Figure 12** shows the full run of the script in the command shell, including where I added a new book title to the existing list, followed by testing the try-except and pickling sections.
 ![Figure 12](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console.png "Running the entire script from the Mac OS Command Shell. The user inputs the book title 'Garcia Lorca: Obras Completas'. They then input the numbers 6 and 0 into the try-except block prompts; that runs an error telling the user they cannot divide by zero. The user is prompted by the script to input two new numbers; they input 6 and 2. This time, the scrpit does run and the console displays the message that their data has been unpickled, showing that the quotient is 3")
 #### Figure 12 — The script running in the Mac OS command shell
