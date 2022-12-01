@@ -45,7 +45,7 @@ Within the with open() line, I added the pickle.dump() function. According to th
 
 Running this section of the script and opening the .dat file showed that the book titles from the list had been successfully dumped into the binary file. As mentioned by Professor Root and other articles I had read on pickling, **Figure 3** shows that the book titles are still in a readable format, but that the rest of the file contains unreadable characters:
 
-![Figure 3 — The binary file](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/test.png "Results of opening the binary file in PyCharm")
+![Figure 3 — The binary file](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/pickled_existing_data_to_file.png?raw=true "Results of opening the binary file in PyCharm" "Results of opening the binary file in PyCharm")
 #### Figure 3 — The binary file opened in PyCharm, showing that the data is still somewhat readable to a human
 
 ## 2.3 Unpickling Existing Data:
@@ -63,7 +63,7 @@ In the with-open line, I again called the .dat file, but this time set the mode 
 
 As we saw in **Figure 3**, the binary file does not present the most user-friendly or readable format for the pickled data to be understood by the user using my script. To remedy this, I used a for-loop to loop through the variable existing_data. Since existing_data has access to the binary file, it can easily loop through the data and print out each element from the original list. Before the for-loop, I included a print statement that reminded the user what this data is and where it comes from. **Figure 5** shows the results of running the code chunk from **Figure 4**: 
 
-![Figure 5 — Printing out the unpickled data from the binary file](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/unpickled_printed_data.png "The unpickled and printed out data that had been stored in the binary file")
+![Figure 5 — Printing out the unpickled data from the binary file](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/unpickled_printed_data.png?raw=true "The unpickled and printed out data that had been stored in the binary file")
 
 #### Figure 5 — The unpickled and printed out data that had been stored in the binary file
 
@@ -94,10 +94,10 @@ I used similar code from **Figure 2** to write the updated list to the binary fi
 
 Similar to **Figure 4**, I used another for-loop that would loop through the updated list and print out each book title for the user. **Figure 7** and **Figure 8** show the entire pickling section of this script being run in PyCharm:
 
-![Figure 7](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/running_script_pycharm.png "The script running in PyCharm, showing three things: unpickled data displayed to the user, the user inputting a new book title, and the new updated list of data printed out to the user")
+![Figure 7](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/running_script_pycharm.png?raw=true "The script running in PyCharm, showing three things: unpickled data displayed to the user, the user inputting a new book title, and the new updated list of data printed out to the user")
 #### Figure 7 — The pickling section running in PyCharm, showing the first list, the user's input, and the new list with updated data
 
-![Figure 8](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/new_list.png "The new list saved to the binary file, showing four items in the updated list")
+![Figure 8](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/new_list.png?raw=true "The new list saved to the binary file, showing four items in the updated list")
 #### Figure 8 — The binary file opened in PyCharm, showing the updated list.
 
 ## 3.1 Structured-Error Handling Article:
@@ -139,22 +139,22 @@ My except block used the Python exception ZeroDivisionError, which does not allo
 
 I ran this section of my script in PyCharm, which can be seen in **Figure 10** and **Figure 11**:
 
-![Figure 10](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/try_except_pycharm.png "Running the try-except block in PyCharm. The error message tells the user 8 isn't divisible by 0 and prompts them to input another integer. They input the numbers 4 and 2, after which the script tells them their data has been saved. The script then prints out that their quotient which has been pickled has been unpickled, showing the result is 2.0")
+![Figure 10](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/try_except_pycharm.png?raw=true "Running the try-except block in PyCharm. The error message tells the user 8 isn't divisible by 0 and prompts them to input another integer. They input the numbers 4 and 2, after which the script tells them their data has been saved. The script then prints out that their quotient which has been pickled has been unpickled, showing the result is 2.0")
 #### Figure 10 — The try-except block running in PyCharm. The third line shows the print() statement that runs when a user tries to divide a number by 0. The seventh line shows the unpickled data printed out to the user.
 
-![Figure 11](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/try_except_file.png "The binary file where the quotient data is stored. The saved quotient appears visible at the end of the line, showing that the result is 2.0. The rest of the values before that one is unreadable, due to the nature of binary.")
+![Figure 11](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/try_except_file.png?raw=true "The binary file where the quotient data is stored. The saved quotient appears visible at the end of the line, showing that the result is 2.0. The rest of the values before that one is unreadable, due to the nature of binary.")
 #### Figure 11 — The results of the try-except block: the saved quotient appears in the binary file, visible at the end of the line.
 
 ## 3.3 Running the script in the Command Shell:
 
 I also ran my script in the command shell, which can be seen in **Figures 12** through **Figure 14**. **Figure 12** shows the full run of the script in the command shell, including where I added a new book title to the existing list, followed by testing the try-except and pickling sections.
-![Figure 12](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console.png "Running the entire script from the Mac OS Command Shell. The user inputs the book title Garcia Lorca: Obras Completas. They then input the numbers 6 and 0 into the try-except block prompts; that runs an error telling the user they cannot divide by zero. The user is prompted by the script to input two new numbers; they input 6 and 2. This time, the scrpit does run and the console displays the message that their data has been unpickled, showing that the quotient is 3")
+![Figure 12](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console.png?raw=true "Running the entire script from the Mac OS Command Shell. The user inputs the book title Garcia Lorca: Obras Completas. They then input the numbers 6 and 0 into the try-except block prompts; that runs an error telling the user they cannot divide by zero. The user is prompted by the script to input two new numbers; they input 6 and 2. This time, the scrpit does run and the console displays the message that their data has been unpickled, showing that the quotient is 3")
 #### Figure 12 — The script running in the Mac OS command shell
 
-![Figure 13](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console_result_1.png "A picture of the binary file opened. At the end of the line, it shows the book title the user had input 'Garcia Lorca: Obras Completas' The rest of the data before that line is obscured and unreadable.")
+![Figure 13](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console_result_1.png?raw=true "A picture of the binary file opened. At the end of the line, it shows the book title the user had input 'Garcia Lorca: Obras Completas' The rest of the data before that line is obscured and unreadable.")
 #### Figure 13 — The first result of the script having been run in the command shell, showing the book title 'Garcia Lorca: Obras Completas' having been saved to the binary file.
 
-![Figure 14](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console_result_2.png "The second result of the script being run, with a value of 3.0 at the end of the line. The previous data in that line is unreadable, given the nature of binary")
+![Figure 14](https://github.com/scljimenez/IntroToProg-Python-Mod07/blob/main/docs/images/mac_console_result_2.png?raw=true "The second result of the script being run, with a value of 3.0 at the end of the line. The previous data in that line is unreadable, given the nature of binary")
 #### Figure 14 — The last result of the script running in the command shell, showing that the quotient has been saved to the binary file since its result is not 0.
 
 ## 4. Summary
